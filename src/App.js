@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Navbar from './Components/Header/Navbar';
+import TextForm from './Components/Main/TextForm';
+import sun from './darkmode/sun.svg';
+import moon from './darkmode/moon-night-rainy.svg';
 
 function App() {
+  const [theme, setTheme] = useState('dark'); // Initially set to dark theme
+
+  const handleDarkMode = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  };
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+      <Navbar darkmodebutton={theme === 'dark' ? moon : sun} handleDarkMode={handleDarkMode} whichtheme={theme} />
+      <TextForm head='Transform The text as you want' />
     </div>
   );
 }
