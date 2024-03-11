@@ -1,0 +1,13 @@
+nav{
+  border-bottom: 1px solid #efefef;
+}
+.light-theme {
+  color: black;
+  background: white;
+}
+
+/* Dark Theme */
+.dark-theme {
+  color: white;
+  background: black;
+}
