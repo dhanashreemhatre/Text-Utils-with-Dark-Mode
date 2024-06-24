@@ -30,7 +30,7 @@ function TextForm(props) {
         
     }
     const [text,setText]=useState('');
-    let word_count=0
+    let word_count=0    
     if (text===''){
         word_count=0
     }else{
